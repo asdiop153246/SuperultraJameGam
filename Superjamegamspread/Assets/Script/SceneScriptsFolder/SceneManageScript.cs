@@ -24,4 +24,9 @@ public class SceneManageScript : MonoBehaviour
     {
         SceneManager.LoadScene(3);
     }
+
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
 }

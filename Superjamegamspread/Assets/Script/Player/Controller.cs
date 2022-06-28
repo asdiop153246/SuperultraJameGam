@@ -5,6 +5,14 @@ using UnityEngine;
 public class Controller : MonoBehaviour
 {
     public float speed = 500.0f;
+    public PlayerScript player;
+    private Rigidbody rb;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
 
     // Update is called once per frame
     void Update()
@@ -14,5 +22,11 @@ public class Controller : MonoBehaviour
 
         float z = Input.GetAxis("Vertical");
         transform.position += new Vector3(0, 0, z * speed * Time.deltaTime);
+    }
+
+    void Dash()
+    {
+        player.UseEnergy(20);
+        
     }
 }

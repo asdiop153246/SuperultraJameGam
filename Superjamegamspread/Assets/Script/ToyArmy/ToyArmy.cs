@@ -21,6 +21,7 @@ public class ToyArmy : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        // if hit human, create toy and destroy human
         if (other.CompareTag("Human"))
         {
             random = Random.Range(0, toyArmyTemplate.toyArmyTemplate.Length);

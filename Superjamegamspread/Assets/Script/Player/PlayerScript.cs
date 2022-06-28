@@ -96,14 +96,14 @@ public class PlayerScript : MonoBehaviour
             timeCount -= 1;
         }
         // Time out
-        else if (timeCount > 0 && isPlaying == true)
+        else if (timeCount >= 0 && isPlaying == true)
         {
             timeCount = 0;
             gameOverCanvas.SetActive(true);
         }
         else if (timeCount > 0 && isPlaying == false)
         {
-            
+            gameOverCanvas.SetActive(true);
         }
     }
 

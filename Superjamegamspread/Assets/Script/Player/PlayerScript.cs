@@ -72,6 +72,7 @@ public class PlayerScript : MonoBehaviour
             isPlaying = false;
             gameWinCanvas.SetActive(true);
         }
+
         
     }
 
@@ -79,8 +80,18 @@ public class PlayerScript : MonoBehaviour
     public void TakeDamage(int damage)
     {
         // Set health bar
-        currenetHealthPoint -= damage;
-        statusBar.SetHealth(currenetHealthPoint);
+        if(currenetHealthPoint - damage > 0)
+        {
+            currenetHealthPoint -= damage;
+            statusBar.SetHealth(currenetHealthPoint);
+        }
+        else
+        {
+            currenetHealthPoint -= damage;
+            statusBar.SetHealth(currenetHealthPoint);
+            gameOverCanvas.SetActive(true);
+            isPlaying = false;
+        }
     }
 
     public void UseEnergy(int energy)

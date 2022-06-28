@@ -20,7 +20,7 @@ public class PlayerScript : MonoBehaviour
     public float timeCount = 5;
     public Text timeText;
     public Text scoreText;
-    private int score = 0;
+    public int score = 0;
 
     private StatusBarScript statusBar;
     private ToyArmyTemplate toyArmyTemplate;
@@ -36,7 +36,7 @@ public class PlayerScript : MonoBehaviour
     }
 
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
         toyArmyTemplate = GameObject.FindGameObjectWithTag("ToyArmyTemplate").GetComponent<ToyArmyTemplate>();
 
@@ -51,7 +51,7 @@ public class PlayerScript : MonoBehaviour
 
     }
 
-    private void Update()
+    public void Update()
     {
 
         // Show time

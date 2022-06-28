@@ -4187,7 +4187,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
   m_Intensity: 0.94
   m_Range: 10
   m_SpotAngle: 30
@@ -6553,7 +6553,7 @@ Transform:
   m_GameObject: {fileID: 1010915639}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -465, y: 585, z: 4496}
-  m_LocalScale: {x: 1.9049, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 13
@@ -10619,7 +10619,7 @@ Transform:
   m_GameObject: {fileID: 1570446648}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -5245, y: 585, z: 423}
-  m_LocalScale: {x: 1.6207, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 15
@@ -11725,7 +11725,7 @@ Transform:
   m_GameObject: {fileID: 1832266044}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -465, y: 585, z: -3224}
-  m_LocalScale: {x: 1.7116, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 12
@@ -13384,7 +13384,6 @@ GameObject:
   - component: {fileID: 3666968688362861612}
   - component: {fileID: 3666968688362861608}
   - component: {fileID: 3666968688362861613}
-  - component: {fileID: 3666968688362861611}
   m_Layer: 0
   m_Name: UFO_Player
   m_TagString: Player
@@ -13443,19 +13442,6 @@ MonoBehaviour:
   timeCount: 30
   timeText: {fileID: 136024171}
   scoreText: {fileID: 233692453}
---- !u!135 &3666968688362861611
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3666968688362861607}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 75
-  m_Center: {x: -0.14600372, y: 0.037103184, z: 50.882412}
 --- !u!135 &3666968688362861612
 SphereCollider:
   m_ObjectHideFlags: 0

@@ -889,6 +889,7 @@ GameObject:
   m_Component:
   - component: {fileID: 908687628}
   - component: {fileID: 908687629}
+  - component: {fileID: 908687630}
   m_Layer: 5
   m_Name: GameOverFolder
   m_TagString: Untagged
@@ -932,6 +933,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5f7faf0bd8fee14b8188b552e97fc17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &908687630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 908687627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e5b7215907b4664dbde36c701d01d52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerScript: {fileID: 3666968688362861610}
 --- !u!1 &909424637
 GameObject:
   m_ObjectHideFlags: 0

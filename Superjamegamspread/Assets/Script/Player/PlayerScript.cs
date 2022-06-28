@@ -26,25 +26,36 @@ public class PlayerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // set HealthPoint and EnergyPoint
         currenetHealthPoint = maxHealthPoint;
         statusBar.SetMaxHealth(maxHealthPoint);
         currentEnergyPoint = maxEnergyPoint;
         statusBar.SetMaxEnergy(maxEnergyPoint);
+
+        // Time countdown
         InvokeRepeating("TimeCountDown", 1.0f, 1.0f);
 
     }
 
     private void Update()
     {
-
+        // Show time
         timeText.text = "" + timeCount;
         
     }
 
+    // Player take damage
     public void TakeDamage(int damage)
     {
+        // Set health bar
         currenetHealthPoint -= damage;
         statusBar.SetHealth(currenetHealthPoint);
+    }
+
+    public void UseEnergy(int energy)
+    {
+        currentEnergyPoint -= energy;
+        statusBar.SetEnergy(currentEnergyPoint);
     }
 
     void TimeCountDown()
@@ -53,6 +64,8 @@ public class PlayerScript : MonoBehaviour
         {
             timeCount -= 1;
         }
+
+        // Time out
         else
         {
             timeCount = 0;

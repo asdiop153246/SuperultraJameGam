@@ -9,7 +9,7 @@ public class PlayerScript : MonoBehaviour
     private int currenetHealthPoint = 100;
     private int maxEnergyPoint = 100;
     private int currentEnergyPoint = 100;
-    public float speed = 500.0f;
+
     public GameObject gameOverCanvas;
 
     public float timeCount = 5;
@@ -36,11 +36,6 @@ public class PlayerScript : MonoBehaviour
 
     private void Update()
     {
-        float x = Input.GetAxis("Horizontal");
-        transform.position += new Vector3(x * speed * Time.deltaTime, 0, 0);
-
-        float z = Input.GetAxis("Vertical");
-        transform.position += new Vector3(0, 0, z * speed * Time.deltaTime);
 
         timeText.text = "" + timeCount;
         

@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class GameOver : MonoBehaviour
 {
-    public PlayerScript playerScript;
+    public Controller controller;
 
     // Start is called before the first frame update
     void Start()
     {
-        playerScript.GetComponent<PlayerScript>().enabled = false;
+        controller.GetComponent<Controller>().enabled = false;
     }
 
     // Update is called once per frame

@@ -26,6 +26,11 @@ public class RocketScript : MonoBehaviour
             player.TakeDamage(20);
             Destroy(gameObject);
         }
+        else if (other.CompareTag("Wall"))
+        {
+            Destroy(gameObject);
+        }
     }
+
 
 }

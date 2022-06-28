@@ -12,6 +12,8 @@ public class PlayerScript : MonoBehaviour
 
     private bool isPlaying;
 
+    public GameObject beam;
+
     public GameObject gameOverCanvas;
     public GameObject gameWinCanvas;
 
@@ -28,6 +30,7 @@ public class PlayerScript : MonoBehaviour
         statusBar = GetComponent<StatusBarScript>();
         gameOverCanvas.SetActive(false);
         gameWinCanvas.SetActive(false);
+        beam.SetActive(false);
         isPlaying = true;
 
     }
@@ -73,7 +76,15 @@ public class PlayerScript : MonoBehaviour
             gameWinCanvas.SetActive(true);
         }
 
-        
+        // Beam
+        if (Input.GetButtonDown("Fire1"))
+        {
+            beam.SetActive(true);
+            Invoke("BeamDown", 0.5f);
+
+        }
+
+
     }
 
     // Player take damage
@@ -117,5 +128,11 @@ public class PlayerScript : MonoBehaviour
             gameOverCanvas.SetActive(true);
         }
     }
+
+    void BeamDown()
+    {
+        beam.SetActive(false);
+    }
+
 
 }

@@ -10,22 +10,33 @@ public class PlayerScript : MonoBehaviour
     private int maxEnergyPoint = 100;
     private int currentEnergyPoint = 100;
 
+    private bool isPlaying;
+
     public GameObject gameOverCanvas;
+    public GameObject gameWinCanvas;
 
     public float timeCount = 5;
     public Text timeText;
+    public Text scoreText;
+    private int score = 0;
 
     private StatusBarScript statusBar;
+    private ToyArmyTemplate toyArmyTemplate;
 
     private void Awake()
     {
         statusBar = GetComponent<StatusBarScript>();
         gameOverCanvas.SetActive(false);
+        gameWinCanvas.SetActive(false);
+        isPlaying = true;
+
     }
 
     // Start is called before the first frame update
     void Start()
     {
+        toyArmyTemplate = GameObject.FindGameObjectWithTag("ToyArmyTemplate").GetComponent<ToyArmyTemplate>();
+
         // set HealthPoint and EnergyPoint
         currenetHealthPoint = maxHealthPoint;
         statusBar.SetMaxHealth(maxHealthPoint);
@@ -39,8 +50,28 @@ public class PlayerScript : MonoBehaviour
 
     private void Update()
     {
+
         // Show time
         timeText.text = "" + timeCount;
+
+        // Show score
+        scoreText.text = "Score " + score + " / " + 60;
+
+        // Update score
+        if(toyArmyTemplate.toyArmyList.Count <= 0)
+        {
+            score = 0;
+        }
+        else
+        {
+            score = toyArmyTemplate.toyArmyList.Count;
+        }
+
+        if (score == 60)
+        {
+            isPlaying = false;
+            gameWinCanvas.SetActive(true);
+        }
         
     }
 
@@ -60,16 +91,19 @@ public class PlayerScript : MonoBehaviour
 
     void TimeCountDown()
     {
-        if (timeCount > 0)
+        if (timeCount > 0 && isPlaying == true)
         {
             timeCount -= 1;
         }
-
         // Time out
-        else
+        else if (timeCount > 0 && isPlaying == true)
         {
             timeCount = 0;
             gameOverCanvas.SetActive(true);
+        }
+        else if (timeCount > 0 && isPlaying == false)
+        {
+            
         }
     }
 
